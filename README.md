@@ -48,5 +48,8 @@ ts/
 3. Run a specific TypeScript file using:
 
   ```bash
-   yarn ts-node ts/cluster1/spl_init.ts
+   yarn spl_init.ts
+   yarn spl_mint.ts
+   yarn spl_metadata.ts
+   yarn spl_transfer.ts
    ```
