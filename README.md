@@ -1,8 +1,8 @@
 # Solana Starter Project
 
-This repository contains the implementation of the **1st assignment** for the Q3 2025 Builder Program.
+A Solana Starter project for Q3 2025 Builder Program that demonstrates creating, minting, and transferring SPL tokens and NFTs using TypeScript, UMI, and Metaplex libraries.
 
-## ✅ Completed Files in Assignment 1
+## ✅ Completed Files 
 
 The following TypeScript files were completed as part of Assignment 1:
 
@@ -11,6 +11,13 @@ The following TypeScript files were completed as part of Assignment 1:
 - `spl_metadata.ts` – Adds metadata to SPL tokens  
 - `spl_transfer.ts` – Transfers SPL tokens between accounts
 
+### 🔥 Bonus NFT Files Added
+The following NFT-related scripts were added to enhance functionality:
+
+- `nft_image.ts` – Uploads an image to Irys and returns the image URI  
+- `nft_metadata.ts` – Creates and uploads metadata JSON for the NFT  
+- `nft_mint.ts` – Mints an NFT using the uploaded metadata URI  
+
 ## 📁 Folder Structure
 ```
 ts/
@@ -18,18 +25,26 @@ ts/
 │ ├── spl_init.ts
 │ ├── spl_mint.ts
 │ ├── spl_metadata.ts
-│ └── spl_transfer.ts
-├── package.json
-└── Turbin3-wallet.json
+│ ├── spl_transfer.ts
+│ ├── nft_image.ts
+│ ├── nft_metadata.ts
+│ └── nft_mint.ts
+├── Turbin3-wallet.json
+└── package.json
 ```
 
 ## 🛠️ Requirements
 
-- Solana CLI 
-- Node.js 
-- TypeScript 
-- @solana/web3.js 
-- @solana/spl-token 
+- Solana CLI  
+- Node.js  
+- TypeScript  
+- `@solana/web3.js`  
+- `@solana/spl-token`  
+- `@metaplex-foundation/umi`  
+- `@metaplex-foundation/umi-uploader-irys`  
+- `@metaplex-foundation/mpl-token-metadata`  
+- `bs58`
+
 
 ## 🚀 How to Run
 
@@ -49,7 +64,16 @@ ts/
 
   ```bash
    yarn spl_init.ts
-   yarn spl_mint.ts
-   yarn spl_metadata.ts
-   yarn spl_transfer.ts
+yarn spl_mint.ts
+yarn spl_metadata.ts
+yarn spl_transfer.ts
+yarn nft_image.ts
+yarn nft_metadata.ts
+yarn nft_mint.ts
    ```
+📌 Notes
+Make sure your wallet is correctly loaded in Turbin3-wallet.json.
+
+Update image path (cluster1/pengu.png) and metadata accordingly.
+
+Ensure you are connected to the Solana Devnet for all transactions.
