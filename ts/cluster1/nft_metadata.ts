@@ -1,4 +1,4 @@
-import wallet from "../turbin3-wallet.json"
+import wallet from "../Turbin3-wallet.json"
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createGenericFile, createSignerFromKeypair, signerIdentity } from "@metaplex-foundation/umi"
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
@@ -17,29 +17,31 @@ umi.use(signerIdentity(signer));
         // Follow this JSON structure
         // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
 
-        // const image = ???
-        // const metadata = {
-        //     name: "?",
-        //     symbol: "?",
-        //     description: "?",
-        //     image: "?",
-        //     attributes: [
-        //         {trait_type: '?', value: '?'}
-        //     ],
-        //     properties: {
-        //         files: [
-        //             {
-        //                 type: "image/png",
-        //                 uri: "?"
-        //             },
-        //         ]
-        //     },
-        //     creators: []
-        // };
-        // const myUri = ???
-        // console.log("Your metadata URI: ", myUri);
+         const image = "https://gateway.irys.xyz/GuiRKpJfmenGGvjceoAbLVgbRXotgvShAkh3jtM55iML";
+
+         const metadata = {
+             name: "Penguin",
+             symbol: "PNFT",
+             description: "A cute penguin NFT",
+             image: image,
+            attributes: [
+               {trait_type: 'cute', value: 'Rare'}
+            ],
+          properties: {
+                files: [
+                     {
+                         type: "image/png",
+                         uri: "image"
+                   },
+                 ]
+             },
+             creators: []
+         };
+         const myUri = await umi.uploader.uploadJson(metadata);
+         console.log("Your metadata URI: ", myUri); //Your metadata URI:  https://gateway.irys.xyz/5NW3nU5S9bxEG5QU85bE2YTg7qDhcwdA67WEJuTncy8L
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);
     }
 })();
+
