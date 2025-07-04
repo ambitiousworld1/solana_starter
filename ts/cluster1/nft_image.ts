@@ -1,4 +1,4 @@
-import wallet from "../turbin3-wallet.json"
+import wallet from "../Turbin3-wallet.json"
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createGenericFile, createSignerFromKeypair, signerIdentity } from "@metaplex-foundation/umi"
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
@@ -16,9 +16,15 @@ umi.use(signerIdentity(signer));
 (async () => {
     try {
         //1. Load image
+        const file = await readFile("cluster1/pengu.png");
         //2. Convert image to generic file.
-        //3. Upload image
+        const converyedFile = createGenericFile(file, "pengu.png", {
+            contentType: "image/png"
+        });
 
+        //3. Upload image
+        const [myUri] = await umi.uploader.upload([converyedFile]);
+        console.log("Your image URI: ", myUri); //https://gateway.irys.xyz/GuiRKpJfmenGGvjceoAbLVgbRXotgvShAkh3jtM55iML
         // const image = ???
 
         // const [myUri] = ??? 
