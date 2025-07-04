@@ -71,9 +71,11 @@ yarn nft_image.ts
 yarn nft_metadata.ts
 yarn nft_mint.ts
    ```
-📌 Notes
+### 📌 Notes
+```
 Make sure your wallet is correctly loaded in Turbin3-wallet.json.
 
 Update image path (cluster1/pengu.png) and metadata accordingly.
 
 Ensure you are connected to the Solana Devnet for all transactions.
+```
